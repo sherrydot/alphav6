@@ -1,0 +1,56 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+body{
+  margin: 0px !important;
+}
+
+.navbar {
+  background-color: #000000 !important;
+}
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.btn {
+  color: white !important;
+}
+
+#home{
+  margin-top: 25px;
+}
+
+.jumbotron{
+  background-image: asset-url('desert.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 555px;
+  letter-spacing: 2px;
+}
+
+#signup-btn{
+  margin-top: 200px;
+}
+
+html,body{
+  height: 100%;
+}
+
+#page-content{
+  flex: 1 0 auto;
+  background-color: rgb(89, 84, 100);
+}
+
+#sticky-footer{
+  flex-shrink: none;
+}
