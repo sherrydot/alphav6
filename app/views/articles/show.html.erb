@@ -1,8 +1,29 @@
-<h1>Show Article Details</h1>
 
-<p><strong>Title:</strong> <%= @article.title %> </p>
-<p><strong>Description:</strong> <%= @article.description %> </p>
+<h2 class="text-center mt-5 text-dark"><%= @article.title %></h2>
 
-<%= link_to 'Edit', edit_article_path(@article)%> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "This will delete the article!"} %> |
-<%= link_to 'Return to Articles', articles_path%>
+<div class="container">
+  <div class="row justify-content-md-center mt-5">
+    <div class="col-8">
+      <div class="card text-center shadows bg-white rounded">
+        <div class="card-header fst-italic">
+          by Shaharyar Ahmed
+        </div>
+        <div class="card-body">
+          <div class="card-text"><%= simple_format(@article.description) %></div>
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-info" %>
+          <%= link_to "Delete", article_path(@article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        </div>
+        <div class="card-footer text-muted">
+          <small>
+            Created <%=time_ago_in_words(@article.created_at)%> ago,
+            Edited <%= time_ago_in_words(@article.updated_at)%> ago
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-5">
+  <%= link_to '[ Back to Articles ]', articles_path, class:"text-white"%>
+</div>

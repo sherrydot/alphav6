@@ -1,41 +1,37 @@
-<div id="page-content">
-  <h1 class="text-center mt-5 text-white">Articles List</h1>
 
-  <div class="container">
-    <% @articles.each do |article| %>
-    <div class="row justify-content-md-center mt-5">
-      <div class="col-8">
-        <div class="card text-center shadows bg-white rounded">
-          <div class="card-header fst-italic">
-            by Shaharyar Ahmed
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
-            <p class="card-text"><%= truncate(article.description, length: 10) %></p>
-            <%= link_to "View", article_path(article), class: "btn btn-success" %>
-            <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
-            <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-          </div>
-          <div class="card-footer text-muted">
-            <small>
-              Created <%=time_ago_in_words(article.created_at)%> ago,
-              Edited <%= time_ago_in_words(article.updated_at)%> ago
-            </small>
-          </div>
+<h1 class="text-center mt-5 text-dark">Articles List</h1>
+
+<div class="container">
+  <% @articles.each do |article| %>
+  <div class="row justify-content-md-center mt-5">
+    <div class="col-8">
+      <div class="card text-center shadows bg-white rounded">
+        <div class="card-header fst-italic">
+          by Shaharyar Ahmed
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+          <p class="card-text"><%= truncate(article.description, length: 10) %></p>
+          <%= link_to "View", article_path(article), class: "btn btn-success" %>
+          <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
+          <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        </div>
+        <div class="card-footer text-muted">
+          <small>
+            Created <%=time_ago_in_words(article.created_at)%> ago,
+            Edited <%= time_ago_in_words(article.updated_at)%> ago
+          </small>
         </div>
       </div>
     </div>
-    <%end%>
   </div>
+  <%end%>
+</div>
 
+<br>
+
+<div class="text-center mb-5 mt-2">
+  <%= link_to 'Create New Article', new_article_path %>
   <br>
-
-  <p>
-    <%= link_to 'Create New Article', new_article_path %>
-  </p>
-
-
-  <p>
-    <%= link_to 'Return to Home', root_path %>
-  </p>
+  <%= link_to 'Return to Home', root_path %>
 </div>
