@@ -9,36 +9,31 @@
 
       <div class="input-group row">
         <%= f.label :username, class: "col-2 col-form-label text-white" %>
-        <div class="col-10">
+        <div class="col-8">
           <%= f.text_field :username, class: "form-control", placeholder:"Enter username" %>
         </div>
       </div>
 
       <div class="input-group row mt-2">
         <%= f.label :email, class: "col-2 col-form-label text-white" %>
-        <div class="col-10">
+        <div class="col-8">
           <%= f.email_field :email ,class: "form-control", placeholder:"Enter email" %>
         </div>
       </div>
 
       <div class="input-group row mt-2">
         <%= f.label :password, class: "col-2 col-form-label text-white" %>
-        <div class="col-10">
+        <div class="col-8">
           <%= f.password_field :password ,class: "form-control", placeholder:"Choose password" %>
         </div>
       </div>
 
       <div class="input-group justify-content-center mt-3">
-        <%= f.submit class:"btn btn-dark btn-md" %>
+        <%= f.submit "Sign up", class:"btn btn-dark btn-md" %>
       </div>
 
       <%end%>
 
     </div>
   </div>
-
-  <div class="text-center mt-5">
-    <%= link_to '[ Cancel and Return ]', articles_path, class:"text-white"%>
-  </div>
-
 </div>
