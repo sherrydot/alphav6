@@ -12,4 +12,13 @@ class ApplicationController < ActionController::Base
     !!current_user  # !! returns boolean value (for presence)
   end
 
+
+  def require_user
+    if !logged_in?
+      flash[:alert] = "Please login first"
+      redirect_to login_path
+    end
+  end
+
+
 end
