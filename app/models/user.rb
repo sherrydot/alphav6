@@ -1,7 +1,8 @@
 class User < ApplicationRecord
 
   before_save {self.email = email.downcase}
-  has_many :articles
+  # dependent destroy will delete articles associated to a user that has been deleted
+  has_many :articles, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   
